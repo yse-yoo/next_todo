@@ -21,10 +21,14 @@ export default function Home() {
     })();
   }, [])
 
+  // useEffect(() => {
+  //   const tags = loadTags(todos, autoCompleteTags);
+  //   setAutoCompleteTags(tags);
+  // }, [todos, autoCompleteTags])
   useEffect(() => {
-    const tags = loadTags(todos, autoCompleteTags);
+    const tags = loadTags(todos, initialAutoCompleteTags);
     setAutoCompleteTags(tags);
-  }, [todos, autoCompleteTags])
+  }, [todos])
 
   const saveTodo = async (value: string, tags: string[]) => {
     if (value.trim() !== '') {
